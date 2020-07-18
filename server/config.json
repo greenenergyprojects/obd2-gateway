@@ -1,0 +1,40 @@
+{
+    "server": {
+        "start": true,
+        "port": 8080,
+        "morgan": {
+            "disabled": true,
+            "config": "tiny"
+         }
+    },
+    "debug": {
+        "depth": 3,
+        "colors" : true,
+        "wtimediff": 6,
+        "time": "ddd, yyyy-mm-dd HH:MM:ss.l",
+        "wmodule": 15,
+        "wlevel": 6,
+        "location": "-*",
+        "enabled": "*::WARN, *::INFO, *::FINE, *::FINER, *::FINEST"
+    },
+    "obd2-old": {
+        "serialType": "usb",
+        "serialPort": "/dev/ttyUSB0",
+        "simulate": true,
+        "timeoutMillis": 500,
+        "device": "elm327",
+        "baudRate": 38400,
+        "cleaner": true
+    },
+    "obd2": {
+        "device": "elm327",
+        "type": "sim",
+        "timeoutMillis": 5000,
+        "serialPort": {
+            "device": "/dev/ttyUSB0",
+            "options": {
+                "baudRate": 57600
+            }
+        }
+    }
+}

@@ -1,0 +1,135 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "server/node_modules/gulp/bin/gulp.js",
+            "type": "shell",
+            "args": [
+                "--gulpfile",
+                "server/gulpfile.js",
+                "build"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": [
+                {
+                    "owner": "gulp-typescript",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceRoot}"
+                    ],
+                    "pattern": {
+                        "regexp": "(.*)\\((\\d*),(\\d*)\\): (error|warning) (.*)",
+                        "file": 1,
+                        "line": 2,
+                        "column": 3,
+                        "severity": 4,
+                        "message": 5
+                    }
+                }
+            ]
+        },
+        {
+            "label": "clean",
+            "command": "server/node_modules/gulp/bin/gulp.js",
+            "type": "shell",
+            "args": [
+                "--gulpfile",
+                "server/gulpfile.js",
+                "clean"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            }
+        },
+        {
+            "label": "cleanAndBuild",
+            "command": "server/node_modules/gulp/bin/gulp.js",
+            "type": "shell",
+            "args": [
+                "--gulpfile",
+                "server/gulpfile.js",
+                "cleanAndBuild"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": [
+                "$tsc-watch"
+            ]
+        },
+        {
+            "label": "buildAndCopyToRemote",
+            "command": "server/node_modules/gulp/bin/gulp.js",
+            "type": "shell",
+            "args": [
+                "--gulpfile",
+                "server/gulpfile.js",
+                "buildAndCopyToRemote"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": [
+                {
+                    "owner": "gulp-typescript",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceRoot}"
+                    ],
+                    "pattern": {
+                        "regexp": "(.*)\\((\\d*),(\\d*)\\): (error|warning) (.*)",
+                        "file": 1,
+                        "line": 2,
+                        "column": 3,
+                        "severity": 4,
+                        "message": 5
+                    }
+                }
+            ]
+        },
+        {
+            "label": "buildAndLaunchOnRemote",
+            "command": "server/node_modules/gulp/bin/gulp.js",
+            "type": "shell",
+            "args": [
+                "--gulpfile",
+                "server/gulpfile.js",
+                "buildAndLaunchOnRemote"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": [
+                {
+                    "owner": "gulp-typescript",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceRoot}"
+                    ],
+                    "pattern": {
+                        "regexp": "(.*)\\((\\d*),(\\d*)\\): (error|warning) (.*)",
+                        "file": 1,
+                        "line": 2,
+                        "column": 3,
+                        "severity": 4,
+                        "message": 5
+                    }
+                }
+            ]
+        }
+    ]
+}

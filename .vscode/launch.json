@@ -1,0 +1,61 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch on notebook",
+            "program": "${workspaceRoot}/server/src/main.ts",
+            "cwd": "${workspaceRoot}/server/dist",
+            "console": "integratedTerminal",
+            "outFiles": [ "${workspaceRoot}/server/dist/*.js" ],
+            //"trace": "all",
+            "sourceMaps": true,
+            "preLaunchTask": "build",
+            "smartStep": true,
+            "outputCapture": "console"
+        },
+        {
+            "name": "Launch on pi-obd",
+            "address": "pi-obd",
+            "remoteRoot": "/home/steiner/obd2/server/",
+            "smartStep": true,
+            "stopOnEntry": false,
+            "type": "node",
+            "request": "attach",
+            // "cwd": "${workspaceRoot}/dist",
+            // "outFiles": [ "${workspaceRoot}/dist/*.js" ],
+            // "trace": "all",
+            "trace": false,
+            "sourceMaps": true,
+            "preLaunchTask": "buildAndLaunchOnRemote",
+            "port": 9229,
+            "restart": false,
+            "localRoot": "${workspaceRoot}/server/",
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "name": "Build/Copy/Attach to pi-obd",
+            "address": "pi-obd",
+            "remoteRoot": "/home/steiner/obd2/server/",
+            "smartStep": true,
+            "stopOnEntry": false,
+            "type": "node",
+            "request": "attach",
+            // "cwd": "${workspaceRoot}/dist",
+            // "outFiles": [ "${workspaceRoot}/dist/*.js" ],
+            // "trace": "all",
+            "trace": false,
+            "sourceMaps": true,
+            "preLaunchTask": "buildAndCopyToRemote",
+            "port": 9229,
+            "restart": false,
+            "localRoot": "${workspaceRoot}/",
+            "internalConsoleOptions": "openOnSessionStart"
+        }
+    ]
+}

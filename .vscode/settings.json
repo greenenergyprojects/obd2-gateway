@@ -1,0 +1,14 @@
+{
+	"files.exclude": {
+		"**/node_modules": true,
+		"**/dist": true,
+		"**/dist_remote": true,
+		"**/.vscode": true,
+		"**/package-lock.json": true,
+		"**/tslint.json": true,
+		"**/tsconfig.json": true,
+		"**/gulpfile.js": true,
+		"**/*.code-workspace": true,
+		"**/.gitignore":true
+	}
+}

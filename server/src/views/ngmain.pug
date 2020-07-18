@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+  head
+    title= "e-Docs Server"
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    base(href="/")
+    //- link(rel="stylesheet", href="node_modules/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="ngx/styles.bundle.css")
+    link(rel="icon", type="image/x-icon" href="favicon.ico")
+    script(src="node_modules/spin/dist/spin.min.js")
+    script(src="node_modules/tether/dist/js/tether.min.js")
+  body
+    script(type='text/javascript')
+      | window.__theme = 'bs4';
+    if userid && token
+      input#token(type="hidden" name=userid value=token)
+    app-root
+      #spinner(style="position:absolute; top:50%; left:50%;")
+        script(type='text/javascript')
+          | var spinner = new Spinner().spin()
+          | document.getElementById("spinner").appendChild(spinner.el)
+      script(src="inline.bundle.js")
+      script(src="polyfills.bundle.js")
+      //- script(src="ngx/styles.bundle.js")
+      script(src="vendor.bundle.js")
+      script(src="main.bundle.js")

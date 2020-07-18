@@ -1,0 +1,13 @@
+doctype html
+html(lang="en")
+head
+  title= "Webserver"
+  meta(charset="UTF-8")
+  meta(name="viewport" content="width=device-width, initial-scale=1.0")
+  include links.pug
+body.container
+  header
+    h1 Unauthorized (401)
+    if time
+      div
+        p Timestamp: #{time}
